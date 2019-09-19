@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
     <title>scooh</title>
     <style>
+        /*        Lader billederne fylde 100%*/
         img {
             width: 100%;
         }
 
+        /*        Fjerner padding og margin på body*/
         body {
             margin: 0;
             padding: 0;
@@ -23,19 +25,25 @@
             -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
             -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
             box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            /*            giver headeren en shadow effekt*/
             min-height: 6vw;
+            /*            Headeren skal som minimun være 6vw høj*/
             grid-area: header;
+            /*            Definerer gridets sectioner*/
+
             width: 100vw;
             position: fixed;
+            /*            Lader headeren blive i toppen*/
             display: flex;
             justify-content: space-between;
-            /*            background-image: linear-gradient(#FCE688, white);*/
+            /*            laver luft imellem elementerne*/
         }
 
         footer {
             width: 100%;
             height: 5vw;
             text-align: center;
+            /*            Gør teksten centreret*/
             color: whitesmoke;
             padding-top: 2vw;
             background-color: #404040;
@@ -44,12 +52,15 @@
 
         video {
             width: 100% !important;
+            /*            Lader videoen fylde 100% i bredden*/
         }
+
 
         .splash {
             width: 100vw;
             grid-area: splash;
             overflow: hidden;
+            /*            Gemmer indhold som går udenfor rammerne*/
             height: 33.8vw;
             margin-top: 10vw;
         }
@@ -187,15 +198,6 @@
         }
 
 
-        @media only screen and (min-width: 1143px) {
-            #liste {}
-        }
-
-
-        @media only screen and (min-width: 1200px) {
-            #liste {}
-        }
-
         p {
             font-family: 'Source Sans Pro', sans-serif;
             padding: 25px;
@@ -205,10 +207,7 @@
 
 
         #stil {
-            /*
-            height: 32vw;
-            width: 100vw;
-*/
+
             display: flex;
             background-color: rgba(224, 202, 255, 0.57);
             grid-area: stil;
@@ -256,12 +255,13 @@
         }
 
         #burger {
-            height: 40vw;
-            background-color: rgba(42, 42, 42, 0.11);
+            height: 30vw;
+            background-color: rgb(211, 211, 211);
             padding: 50px;
-            padding-top: 20vw;
             padding-bottom: 0;
             margin-bottom: 0;
+            position: fixed;
+            z-index: 100;
         }
 
         #burgermenu a {
@@ -270,6 +270,7 @@
             /*            text-align: center;*/
             padding: 1vw;
             font-size: 0.5em;
+
 
         }
 
@@ -288,7 +289,6 @@
             padding-top: 1.2vw;
         }
 
-        #menuknapluk {}
 
         @media only screen and (max-width:890px) {
             header {
@@ -361,6 +361,7 @@
             <!-- header m. logo og ikoner -->
         </div>
 
+        <!--        Burgermenu er som udgangspunkt skjult-->
         <div id="burger" class="hidden">
             <div id="menuknapluk">X</div>
 
@@ -372,7 +373,7 @@
             </ul>
         </div>
 
-
+        <!--Lader videoen spille med det samme-->
         <div class="splash">
             <video autoplay loop muted playsinline>
                 <!-- splash m. video -->
@@ -403,6 +404,8 @@
         <div class="overskrift">
             <h2>INSPIRATION</h2>
         </div>
+
+        <!--        Section til stilafsnit-->
         <section id="stil">
             <div>
                 <img src="img/yellow_gammel.png" alt="sko">
@@ -446,22 +449,28 @@
             const filterKnapper = document.querySelectorAll(".filterknapper");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerSko));
 
+            //Når der klikkes på menuknap eller menuknapluk, så gå til funtionen toggleMenu
             document.querySelector("#menuknap").addEventListener("click", toggleMenu);
             document.querySelector("#menuknapluk").addEventListener("click", toggleMenu);
         }
 
         function toggleMenu() {
             console.log("toggleMenu");
+
+            //            Burgermenuen er skjult på forsiden
             document.querySelector("#burger").classList.toggle("hidden");
 
+            //            Hvis containerforside er synlig skal den skjules. Hvis den er skjult skal den vises
             if (document.querySelector("#containerforside")) {
                 document.querySelector("#containerforside").classList.toggle("hidden");
             }
 
+            //            Hvis menuknappen er synlig skal den skjules. Hvis den er skjult skal den vises
             if (document.querySelector("#menuknap")) {
                 document.querySelector("#menuknap").classList.toggle("hidden");
             }
 
+            //            Hvis splashen er synlig skal den skjules. Hvis den er skjult skal den vises
             if (document.querySelector(".splash")) {
                 document.querySelector(".splash").classList.toggle("hidden");
             }
