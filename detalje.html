@@ -18,8 +18,12 @@
             -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
             -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
             box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-            min-height: 5vw;
+            min-height: 6vw;
             grid-area: header;
+            width: 100vw;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
 
         }
 
@@ -27,10 +31,12 @@
             background-color: #404040;
             grid-area: footer;
             color: whitesmoke;
+            height: 5vw;
             text-align: center;
         }
 
         .skoene {
+            padding-top: 10vw;
             grid-area: sko;
             display: flex;
             flex-wrap: wrap;
@@ -159,15 +165,65 @@
             font-family: 'Source Sans Pro', sans-serif;
         }
 
+        .kurv {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding-left: 25vw;
+            padding: 10px;
+        }
+
+        .facebook {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding: 10px;
+        }
+
+        .insta {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding: 10px;
+        }
+
+        .mail {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding: 10px;
+        }
+
+        .ikoner {
+            padding-right: 10vw;
+        }
+
+        @media only screen and (max-width:890px) {
+
+            .logo {
+                padding: 10px;
+                padding-left: 10vw;
+                height: 4vw;
+                width: auto;
+            }
+
+
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <a href="index.html">
-            <img class="logo" src="img/scoohlogo.png" alt="logo">
-        </a>
+        <div>
+            <a href="index.html">
+                <img class="logo" src="img/scoohlogo.png" alt="logo"></a></div>
+        <div class="ikoner">
+            <img class="kurv" src="img/SVG/Tegnebr%C3%A6t%201.svg" alt="kurv">
+            <img class="facebook" src="img/SVG/facebook.svg" alt="facebook">
+            <img class="insta" src="img/SVG/insta.svg" alt="instagram">
+            <img class="mail" src="img/SVG/Tegnebr%C3%A6t%202.svg" alt="mail"></div>
+
     </header>
 
     <section id="detalje">
@@ -252,8 +308,5 @@
                 }
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
