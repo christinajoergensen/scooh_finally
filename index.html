@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+    <title></title>
+    <style>
+        img {
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #292929;
+            -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            min-height: 6vw;
+            grid-area: header;
+            width: 100vw;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            /*            background-image: linear-gradient(#FCE688, white);*/
+        }
+
+        footer {
+            width: 100%;
+            height: 10vw;
+            text-align: center;
+            color: whitesmoke;
+            padding-top: 2vw;
+            background-color: #404040;
+
+        }
+
+        video {
+            width: 100% !important;
+        }
+
+        .splash {
+            width: 100vw;
+            grid-area: splash;
+            overflow: hidden;
+            height: 33.8vw;
+            margin-top: 10vw;
+        }
+
+
+
+
+
+        nav {
+            grid-area: nav;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            min-height: 5vw;
+            -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            position: fixed;
+            top: 6vw;
+            width: 100%;
+            height: 5.6vw;
+        }
+
+
+
+
+
+        #container {
+            font-family: 'Varela Round', sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            /*            grid-template-rows: 10vw 50vw 10vw 250vw 20vw;*/
+            grid-template-areas:
+                "header header header header"
+
+                "splash splash splash splash"
+                "nav nav nav nav"
+                "indhold indhold indhold indhold"
+                "stjæl stjæl stjæl stjæl"
+                "stil stil stil stil"
+                "footer footer footer footer"
+        }
+
+        .filterknapper {
+            font-size: 1.5em;
+            border: none;
+            background-color: #ffffff;
+            color: #2a2a2a;
+            font-family: 'Lato', sans-serif;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            width: 100%;
+        }
+
+        .filterknapper:hover {
+            background-color: gainsboro;
+        }
+
+        .overskrift {
+            grid-area: stjæl;
+            background-color: rgba(224, 202, 255, 0.57);
+            padding-left: 8.5vw;
+            padding-top: 2vw;
+            font-size: 1em;
+        }
+
+
+        .valgt {
+
+            font-size: 1.5em;
+            border: none;
+            background-color: #ffffff;
+            color: #2a2a2a;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .valgt:hover {
+            background-color: gainsboro;
+        }
+
+        /*
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            grid-gap: 1em;
+            padding: 4rem;
+        }
+
+
+*/
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            padding: 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        h3 {
+            grid-area: kategorier;
+            padding-left: 15vw;
+            font-size: 1em;
+            margin-top: 11vw;
+            margin-top: 40vw;
+        }
+
+        .indhold {
+            grid-area: indhold;
+            margin-left: 7vw;
+            margin-right: 7vw;
+            padding-bottom: 5vw;
+            padding-top: 3vw;
+
+        }
+
+
+
+        #liste {
+            display: grid;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+            grid-gap: 1em;
+            padding: 70px;
+            grid-gap: 2em;
+            /*            margin: 10vw;*/
+
+            margin-top: 3vw;
+        }
+
+
+
+        h3 {
+            grid-area: kategorier;
+        }
+
+        .logo {
+            height: 3vw;
+            width: auto;
+            margin-top: 1.2vw;
+            padding-left: 13vw;
+        }
+
+
+        @media only screen and (min-width: 1143px) {
+            #liste {}
+        }
+
+
+        @media only screen and (min-width: 1200px) {
+            #liste {}
+        }
+
+        p {
+            font-family: 'Source Sans Pro', sans-serif;
+            padding: 25px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+
+        #stil {
+            /*
+            height: 32vw;
+            width: 100vw;
+*/
+            display: flex;
+            background-color: rgba(224, 202, 255, 0.57);
+            grid-area: stil;
+            padding: 0vw 10vw 5vw 10vw;
+        }
+
+        .kurv {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding-left: 25vw;
+            padding: 10px;
+        }
+
+        .facebook {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding: 10px;
+        }
+
+        .insta {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding: 10px;
+        }
+
+        .mail {
+            height: 25px;
+            margin-top: 1vw;
+            width: auto;
+            padding: 10px;
+        }
+
+        .ikoner {
+            padding-right: 10vw;
+        }
+
+        .hidden {
+            transform: scale(0);
+            display: none;
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        #burger {
+            height: 70vw;
+            background-color: rgba(42, 42, 42, 0.11);
+            padding: 50px;
+            padding-top: 20vw;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        #burgermenu a {
+            color: black;
+            text-decoration: none;
+            /*            text-align: center;*/
+            padding: 1vw;
+            font-size: 0.5em;
+
+        }
+
+        #burgermenu {
+            list-style: none;
+            width: 84vw;
+        }
+
+        #menuknap {
+            height: 50px;
+            width: 50px;
+            border: none;
+            margin-left: 5vw;
+            margin-top: 2vw;
+            color: whitesmoke;
+            padding-top: 1.2vw;
+        }
+
+        #menuknapluk {}
+
+        @media only screen and (max-width:890px) {
+            header {
+                width: 100%;
+            }
+
+            nav {
+                transform: scale(0);
+                display: none;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            .splash {
+                margin-top: 0;
+                padding-top: 7.6vw;
+            }
+
+            .logo {
+                padding: 10px;
+                height: 4vw;
+                width: auto;
+            }
+
+
+        }
+
+        @media only screen and (min-width:890px) {
+            #menuknap {
+                transform: scale(0);
+                display: none;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            #burger {
+                transform: scale(0);
+                display: none;
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- container med alle sitets elementer -->
+        <div class="header">
+            <div id="menuknap">☰</div>
+            <div><img class="logo" src="img/scoohlogo.png"></div>
+            <div class="ikoner">
+                <img class="kurv" src="img/SVG/Tegnebr%C3%A6t%201.svg">
+                <img class="facebook" src="img/SVG/facebook.svg">
+                <img class="insta" src="img/SVG/insta.svg">
+                <img class="mail" src="img/SVG/Tegnebr%C3%A6t%202.svg"></div>
+
+
+            <!-- header m. logo -->
+        </div>
+
+        <div id="burger" class="hidden">
+            <div id="menuknapluk">X</div>
+
+            <ul id="burgermenu">
+                <li class="filterknapper" data-kategori="alle">ALL</li>
+                <li class="filterknapper" data-kategori="chill">CHILL</li>
+                <li class="filterknapper" data-kategori="girly">GIRLY</li>
+                <li class="filterknapper" data-kategori="work">WORK</li>
+            </ul>
+        </div>
+
+
+        <div class="splash">
+            <video autoplay loop muted playsinline>
+                <!-- splash m. video -->
+                <source src="img/scooh3.mp4">
+            </video>
+        </div>
+        <nav>
+            <!-- navigation m. knapper, der filtrerer indhold -->
+            <button class="filterknapper" data-kategori="alle">ALL</button>
+            <button class="filterknapper" data-kategori="chill">CHILL</button>
+            <button class="filterknapper" data-kategori="girly">GIRLY</button>
+            <button class="filterknapper" data-kategori="work">WORK</button>
+        </nav>
+        <div class="indhold">
+            <section id="liste"></section> <!-- section hvor informationer skal placeres -->
+        </div>
+
+        <template>
+            <!-- template af hvordan (og hvilke) informationer skal placeres -->
+            <article class="skoene">
+                <img src="" alt="">
+                <h2></h2>
+
+                <p id="type"></p>
+                <p id="pris"></p>
+            </article>
+        </template>
+        <div class="overskrift">
+            <h2>INSPIRATION</h2>
+        </div>
+        <section id="stil">
+            <div>
+                <img src="img/yellow_gammel.png" alt="sko">
+            </div>
+            <div>
+                <img src="img/classic_gammel.png" alt="sko">
+
+            </div>
+            <div>
+                <img src="img/ankle-strap_gammel.png" alt="sko">
+            </div>
+            <div>
+                <img src="img/sandal_gammel.png" alt="sko">
+            </div>
+
+
+        </section>
+
+    </div>
+    <footer>
+        <!-- footer med yderligere information -->
+        <p>scooh@contact.com</p>
+
+    </footer>
+
+
+
+
+
+
+
+    <script>
+        //load indhold og lav variabler
+        document.addEventListener("DOMContentLoaded", start);
+        let alleSko = [];
+        let filter = "alle";
+
+        //load json, giv nav-knapper navn og gør dem klikbare
+        function start() {
+            getJason();
+            const filterKnapper = document.querySelectorAll(".filterknapper");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerSko));
+
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+            document.querySelector("#menuknapluk").addEventListener("click", toggleMenu);
+        }
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#burger").classList.toggle("hidden");
+
+            if (document.querySelector("#containerforside")) {
+                document.querySelector("#containerforside").classList.toggle("hidden");
+            }
+
+            if (document.querySelector("#menuknap")) {
+                document.querySelector("#menuknap").classList.toggle("hidden");
+            }
+
+            if (document.querySelector(".splash")) {
+                document.querySelector(".splash").classList.toggle("hidden");
+            }
+
+        }
+
+        //Sæt filter via kategori
+        function filtrerSko() {
+            filter = this.dataset.kategori;
+            console.log(filter);
+            visSko();
+        }
+
+        //load specifikt indhold fra json.
+        async function getJason() {
+            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/1M0-P9Mx1ZLgYytLbVoFBXB9PjJ3tMO7L6pGJb4u5SEo/od6/public/values?alt=json");
+
+            alleSko = await jsonData.json();
+            visSko();
+        }
+
+        //giv inhold destinationen "liste" og lad dem tage informationer som er i "template"
+        function visSko() {
+            const dest = document.querySelector("#liste");
+            const temp = document.querySelector("template");
+            dest.textContent = "";
+
+            //vis element hvis elementet matcher kategori eller kategori er "alle"
+            alleSko.feed.entry.forEach((sko) => {
+                if (sko.gsx$kategori.$t == filter || filter == "alle") {
+
+                    //specificer hvilke elementer der skal hentes for at udfylde template
+                    const klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").textContent = sko.gsx$navn.$t;
+                    klon.querySelector("#type").textContent = sko.gsx$kort.$t;
+                    klon.querySelector("img").src = "img/" + sko.gsx$billede.$t + ".png";
+                    klon.querySelector("#pris").textContent = "Pris: " + sko.gsx$pris.$t + ",-";
+
+
+                    //når sidste element er klonet, gør alle elementer klikbare og send dem videre til singleview når der klikkes
+                    dest.appendChild(klon);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        location.href = `detalje.html?id=${sko.gsx$id.$t}`;
+
+                    })
+                }
+            })
+        }
+    </script>
+
+</body></html>
